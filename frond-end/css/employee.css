@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.employee{
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid black; */
+    background-color: rgb(245, 239, 232);
+    
+}
+.card{
+    /* width: 20rem;
+    height: 20rem; */
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-top: 10px; */
+    width: 100%;
+    height: 90vh;
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+
+    
+
+
+}
+
+.emp-cards{
+ margin-left: 10px;
+
+    
+}
+.emp-cards img{
+    width: 28rem;
+    height: 28rem;
+
+}
+.emp-content{
+    width: 40%;
+    margin-left: 80px;
+    margin-top: 10px;
+
+
+}
+
+
+
+table{
+    width: 100%;
+    height: 70vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    /* background: linear-gradient(rgb(236, 57, 57),rgb(232, 192, 198)); */
+    background-color: #fff;
+    border-radius: 12px;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 1); */
+    max-width: 400px;
+
+}
+
+.input input{
+    height: 32px;
+    width: 400px;
+    padding-left: 10px;
+    
+
+}
+
+.input{
+    margin-left: 50px;
+    /* padding: 10px 80px; */
+    height: 47px;
+}
+
+.edit-btn{
+
+    padding: 10px 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    margin-right: 10px;
+ }
+
+ .edit-btn:hover{
+    background-color:#4bce82;
+
+    color:white;
+ }
+ .delete-btn:hover{
+    background-color:#c14553;
+
+
+ }
+ .delete-btn{
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(155, 12, 12);
+    color: white;
+    border: none;
+    
+ }
