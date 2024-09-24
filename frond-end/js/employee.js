@@ -5,8 +5,6 @@ console.log(urlParams);
 const id=urlParams.get("id")
 console.log(id);
 
-
-
 async function getData() {
     const res=await fetch(`http://localhost:3000/api/getemploy/${id}`);
     console.log(res); 
@@ -16,7 +14,7 @@ async function getData() {
 
     document.getElementById("forms").innerHTML=`<div class="card">
                 <div class="emp-cards" id="card">
-                    <img src="../images/emp_pic.jpg" alt="">
+                    <img src=${emp.profile} alt="">
                 </div>
                 <div class="emp-content">
                     <table>

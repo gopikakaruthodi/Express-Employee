@@ -41,7 +41,7 @@ document.getElementById("forms").addEventListener("submit",async(e)=>{
 
 function validatePhone(phone){
     // console.log(phone);
-    let regEx=/^[6-9]\d{2}-\d{3}-\d{4}/
+    let regEx=/^[6-9]\d{9}/
     console.log(regEx.test(phone));
     
     if ((regEx.test(phone))){
@@ -68,7 +68,7 @@ function validatePhone(phone){
 }
 
 function emailValidation(email){
-    let regEx=/^[a-z][a-z,0-9,.]+@[a-z]+([\.][a-z]{3})/
+    let regEx=/^[A-Z,a-z][a-z,0-9,.]+@[a-z]+([\.][a-z]{3})/
     if ((regEx.test(email))){
         document.getElementById("em").textContent=""
     }

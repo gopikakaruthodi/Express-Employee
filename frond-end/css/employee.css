@@ -9,6 +9,11 @@
     background-color: rgb(245, 239, 232);
     
 }
+.employee h2{
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+    
+}
 .card{
     /* width: 20rem;
     height: 20rem; */

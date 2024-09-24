@@ -9,7 +9,7 @@ async function getData() {
         str+=` <a href="./pages/employee.html?id=${emp._id}">
                     <div class="card">
                         <div class="emp-img">
-                            <img src="./images/emp_pic.jpg" alt="">
+                            <img src=${emp.profile} alt="">
                         </div>
                         <div class="details">
                             <h4>${emp.name}</h4>

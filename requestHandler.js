@@ -36,7 +36,6 @@ export async function addEmployee(req,res){
 }
 export async function getEmployee(req,res){
     try {
-        console.log("hello world");
         const employee=await empSchema.find()
         console.log(employee);
         res.status(200).send(employee)

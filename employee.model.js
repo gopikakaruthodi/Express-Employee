@@ -7,7 +7,7 @@ const empSchema=new mongoose.Schema({
     salary:{type:Number},
     designation:{type:String},
     experience:{type:Number},
-    phone:{type:String},
+    phone:{type:Number},
     email:{type:String},
     profile:{type:String}
 
