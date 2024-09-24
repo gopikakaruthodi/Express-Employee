@@ -1,20 +1,18 @@
 import empSchema from "./employee.model.js"
 
-
-
 export async function addEmployee(req,res){
     try {
         console.log(req.body);
-        const{ID,name,salary,designation,experience,phone,email}=req.body
-        console.log(ID,name,salary,designation,experience,phone,email);
+        const{ID,name,salary,designation,experience,phone,email,profile}=req.body
+        // console.log(ID,name,salary,designation,experience,phone,email,profile);
         // Fields empty
-        if(!(ID&&name&&salary&&designation&&experience&&phone&&email)){
+        if(!(ID&&name&&salary&&designation&&experience&&phone&&email&&profile)){
             return res.status(404).send({msg:"Fields Are Empty"})
         }
         // id already exist
         let checkID=await empSchema.findOne({ID})
         if(!checkID){
-            await empSchema.create({ID,name,salary,designation,experience,phone,email}).then((data)=>{
+            await empSchema.create({ID,name,salary,designation,experience,phone,email,profile}).then((data)=>{
                 res.status(201).send({msg:data})
                 
             }).catch((error)=>{
@@ -88,15 +86,15 @@ export async function updateEmployee(req,res){
         console.log(req.params);
         const _id=req.params;
         console.log(req.body);
-        const{ID,name,salary,designation,experience,phone,email}=req.body
-        console.log(ID,name,salary,designation,experience,phone,email);
+        const{ID,name,salary,designation,experience,phone,email,profile}=req.body
+        // console.log(ID,name,salary,designation,experience,phone,email,profile);
         // Fields empty
         if(!(ID&&name&&salary&&designation&&experience&&phone&&email)){
             return res.status(404).send({msg:"Fields Are Empty"})
         }
         // id already exist
 
-        await empSchema.updateOne({_id},{$set:{ID,name,salary,designation,experience,phone,email}}).then(()=>{
+        await empSchema.updateOne({_id},{$set:{ID,name,salary,designation,experience,phone,email,profile}}).then(()=>{
             res.status(201).send({msg:"update successfully"})
             
         }).catch((error)=>{

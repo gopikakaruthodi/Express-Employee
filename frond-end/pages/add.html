@@ -14,34 +14,39 @@
                 <table >
                     <tr>
                         <td> EmpID:</td>
-                        <td class="input" ><input type="text" name="ID" id="ID" value="" placeholder="EMP001"></td>
+                        <td class="input" ><input type="text" name="ID" id="ID"  placeholder="EMP001"></td>
                     </tr>
                     <tr>
                         <td> Name:</td>
-                        <td class="input" ><input type="text" name="name" id="name" value="" placeholder="Dona"></td>
+                        <td class="input" ><input type="text" name="name" id="name"  placeholder="Dona"></td>
                     </tr>
                     <tr>
                         <td>Salary:</td>
-                        <td class="input" ><input type="number" name="salary" id="salary" value=""></td>
+                        <td class="input" ><input type="number" name="salary" id="salary" ></td>
                     </tr> 
                     <tr>
                         <td>Experience:</td>
-                        <td class="input" ><input type="number" name="experience" id="experience" value=""></td>
+                        <td class="input" ><input type="number" name="experience" id="experience" ></td>
                     </tr>
                     <tr>
                         <td>Designation:</td>
-                        <td class="input" ><input type="text" name="designation" id="designation" value=""></td>
+                        <td class="input" ><input type="text" name="designation" id="designation" ></td>
                     </tr>
                     <tr>
                         <td>Phone:</td>
-                        <td class="input" ><input type="text" name="phone" id="phone" value="" onkeyup="validatePhone(document.getElementById('phone').value)">
+                        <td class="input" ><input type="text" name="phone" id="phone"  onkeyup="validatePhone(document.getElementById('phone').value)">
                         <div id="phn"></div></td>
                     </tr>
                     
                     <tr>
                         <td>Email:</td>
-                        <td class="input" ><input type="email" name="email" id="email" value="" onkeyup="emailValidation(document.getElementById('email').value)">
+                        <td class="input" ><input type="email" name="email" id="email"  onkeyup="emailValidation(document.getElementById('email').value)">
                         <div id="em"></div></td>
+                    </tr>
+                    <tr><td></td><td><img src="../images/emp_pic.jpg" alt="" id="emp-img"></td></tr>
+                    <tr>
+                        <td>Profile:</td>
+                        <td class="input" ><input type="file"  id="profile"  onchange="getProfile()"></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="add" class="button" id="empData"></td>

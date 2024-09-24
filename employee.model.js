@@ -8,7 +8,8 @@ const empSchema=new mongoose.Schema({
     designation:{type:String},
     experience:{type:Number},
     phone:{type:String},
-    email:{type:String}
+    email:{type:String},
+    profile:{type:String}
 
 })
 

@@ -8,12 +8,12 @@ document.getElementById("forms").addEventListener("submit",async(e)=>{
     let experience=document.getElementById("experience").value;
     let phone=document.getElementById("phone").value;
     let email=document.getElementById("email").value;
-    console.log(ID,name,salary,designation,experience,phone,email);
+    console.log(ID,name,salary,designation,experience,phone,email,profile);
 
     await fetch("http://localhost:3000/api/addemployee",{
         method:"post",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({ID,name,salary,designation,experience,phone,email})
+        body:JSON.stringify({ID,name,salary,designation,experience,phone,email,profile})
 
     }).then((res)=>{
         if(res.status==201){
@@ -89,7 +89,38 @@ function emailValidation(email){
     });
 
 
-    }
+}
+
+
+// image  code
+let profile;
+
+async function getProfile() {
+    console.log(document.getElementById("profile").files[0]);
+    profile=await convertBase64(document.getElementById("profile").files[0]);
+    document.getElementById("emp-img").src=profile
+
+    
+    
+}
+
+function convertBase64(file){
+    return new Promise((resolve,reject)=>{
+        const fileReader=new FileReader()
+        fileReader.readAsDataURL(file);
+        fileReader.onload=()=>{
+            resolve(fileReader.result)
+        }
+        fileReader.onerror=(error)=>{
+            reject(error)
+        }
+    })
+
+}
+
+
+
+
 
    
 
