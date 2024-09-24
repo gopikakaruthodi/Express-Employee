@@ -33,7 +33,7 @@ async function getData() {
                 </tr>
                 <tr>
                     <td>Phone:</td>
-                    <td class="input" ><input type="number" name="phone" id="phone" value="${emp.phone}"></td>
+                    <td class="input" ><input type="text" name="phone" id="phone" value="${emp.phone}"></td>
                 </tr>
                 
                 <tr>
