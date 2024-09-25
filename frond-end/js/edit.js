@@ -4,12 +4,14 @@ const urlParams=new URLSearchParams(url.split("?")[1])
 console.log(urlParams);
 const id=urlParams.get("id")
 console.log(id);
+let profile;
 
 async function getData() {
     const res=await fetch(`http://localhost:3000/api/editemployee/${id}`);
     console.log(res); 
     const emp=await res.json()
     console.log(emp);
+    profile=emp.profile;
     document.getElementById("forms").innerHTML=`<table>
                 <tr>
                     <td> EmpID:</td>
@@ -40,8 +42,13 @@ async function getData() {
                     <td>Email:</td>
                     <td class="input" ><input type="email" name="email" id="email" value="${emp.email}"></td>
                 </tr>
+                <tr><td></td><td><div><img src="${profile}" alt="" id="emp-img"></div></td></tr>
                 <tr>
-                    <td><input type="submit" value="add" class="button"></td>
+                    <td>Profile:</td>
+                    <td class="input" ><input type="file"  id="profile"  onchange="getProfile()"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Edit" class="button"></td>
                 </tr>
 
             </table>`
@@ -65,7 +72,7 @@ document.getElementById("forms").addEventListener("submit",async(e)=>{
     const res=await fetch(`http://localhost:3000/api/updateemployee/${id}`,{
         method:"put",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({ID,name,salary,designation,experience,phone,email})
+        body:JSON.stringify({ID,name,salary,designation,experience,phone,email,profile})
 
     })
 
@@ -83,3 +90,26 @@ document.getElementById("forms").addEventListener("submit",async(e)=>{
     }
 
 })
+
+async function getProfile() {
+    console.log(document.getElementById("profile").files[0]);
+    profile=await convertBase64(document.getElementById("profile").files[0]);
+    document.getElementById("emp-img").src=profile
+
+    
+    
+}
+
+function convertBase64(file){
+    return new Promise((resolve,reject)=>{
+        const fileReader=new FileReader()
+        fileReader.readAsDataURL(file);
+        fileReader.onload=()=>{
+            resolve(fileReader.result)
+        }
+        fileReader.onerror=(error)=>{
+            reject(error)
+        }
+    })
+
+}
