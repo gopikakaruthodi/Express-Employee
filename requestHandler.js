@@ -97,7 +97,7 @@ export async function updateEmployee(req,res){
             res.status(201).send({msg:"update successfully"})
             
         }).catch((error)=>{
-            res.status(201).send({msg:error})
+            res.status(404).send({msg:error})
         })
     
     } catch (error) {
